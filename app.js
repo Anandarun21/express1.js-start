@@ -21,8 +21,8 @@ app.use(shopRoutes);
 app.use('/contactus', contactUsRoutes);
 
 // Define success route
-app.get('/success', (req, res, next) => {
-    res.send('<h1>Form successfully filled</h1>');
+app.use('/success', (req, res, next) => {
+    res.sendFile(path.join(__dirname, 'views', 'success.html'));
 });
 
 // 404 handling
